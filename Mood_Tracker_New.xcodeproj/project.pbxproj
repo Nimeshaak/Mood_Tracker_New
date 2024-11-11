@@ -21,6 +21,8 @@
 		9D2C80B42CDF389B0075DA01 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2C80B32CDF389B0075DA01 /* NotificationView.swift */; };
 		9D2C80B82CDF46130075DA01 /* MoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2C80B72CDF46130075DA01 /* MoodView.swift */; };
 		9D2C80BA2CDF49520075DA01 /* MoodStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2C80B92CDF49520075DA01 /* MoodStore.swift */; };
+		9D2C80BD2CE212620075DA01 /* Mood_Tracker_New.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9D2C80BB2CE212620075DA01 /* Mood_Tracker_New.xcdatamodeld */; };
+		9D2C80BF2CE2132B0075DA01 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2C80BE2CE2132B0075DA01 /* PersistenceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		9D2C80B32CDF389B0075DA01 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		9D2C80B72CDF46130075DA01 /* MoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodView.swift; sourceTree = "<group>"; };
 		9D2C80B92CDF49520075DA01 /* MoodStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodStore.swift; sourceTree = "<group>"; };
+		9D2C80BC2CE212620075DA01 /* Mood_Tracker_New.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Mood_Tracker_New.xcdatamodel; sourceTree = "<group>"; };
+		9D2C80BE2CE2132B0075DA01 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,7 @@
 				9D2C80B32CDF389B0075DA01 /* NotificationView.swift */,
 				9D2C80B72CDF46130075DA01 /* MoodView.swift */,
 				9D2C80B92CDF49520075DA01 /* MoodStore.swift */,
+				9D2C80BE2CE2132B0075DA01 /* PersistenceController.swift */,
 			);
 			path = Mood_Tracker_New;
 			sourceTree = "<group>";
@@ -144,6 +149,7 @@
 			children = (
 				9D2C809C2CDE98DD0075DA01 /* Mood_Tracker_NewUITests.swift */,
 				9D2C809E2CDE98DD0075DA01 /* Mood_Tracker_NewUITestsLaunchTests.swift */,
+				9D2C80BB2CE212620075DA01 /* Mood_Tracker_New.xcdatamodeld */,
 			);
 			path = Mood_Tracker_NewUITests;
 			sourceTree = "<group>";
@@ -287,6 +293,7 @@
 				9D2C80842CDE98DB0075DA01 /* ContentView.swift in Sources */,
 				9D2C80B22CDEA34A0075DA01 /* TabBarView.swift in Sources */,
 				9D2C80822CDE98DB0075DA01 /* Mood_Tracker_NewApp.swift in Sources */,
+				9D2C80BF2CE2132B0075DA01 /* PersistenceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D2C809D2CDE98DD0075DA01 /* Mood_Tracker_NewUITests.swift in Sources */,
+				9D2C80BD2CE212620075DA01 /* Mood_Tracker_New.xcdatamodeld in Sources */,
 				9D2C809F2CDE98DD0075DA01 /* Mood_Tracker_NewUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -610,6 +618,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9D2C80BB2CE212620075DA01 /* Mood_Tracker_New.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9D2C80BC2CE212620075DA01 /* Mood_Tracker_New.xcdatamodel */,
+			);
+			currentVersion = 9D2C80BC2CE212620075DA01 /* Mood_Tracker_New.xcdatamodel */;
+			name = Mood_Tracker_New.xcdatamodeld;
+			path = /Users/gihannemindra/Desktop/Mood_Tracker_New/Mood_Tracker_NewUITests/Mood_Tracker_New.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9D2C80762CDE98DB0075DA01 /* Project object */;
 }
