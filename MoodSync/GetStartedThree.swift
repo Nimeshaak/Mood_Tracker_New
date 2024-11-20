@@ -12,7 +12,7 @@ struct GetStartedThree: View {
                     .edgesIgnoringSafeArea(.all)
 
 
-                Color.black.opacity(0.4)
+                Color.black.opacity(0.5)
                     .edgesIgnoringSafeArea(.all)
 
 
