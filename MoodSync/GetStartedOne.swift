@@ -5,7 +5,7 @@ struct GetStartedOne: View {
         NavigationStack {
             ZStack {
 
-                Image("FirstImage")
+                Image("IMG3")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(minWidth: 0, maxWidth: .infinity)

@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9D6D23222CEE116E002261F3 /* MoodSync.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9D6D23202CEE116E002261F3 /* MoodSync.xcdatamodeld */; };
+		9D6D23242CEE2B55002261F3 /* MoodListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6D23232CEE2B55002261F3 /* MoodListView.swift */; };
+		9D6D23272CEE7A2B002261F3 /* MoodSync.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9D6D23252CEE7A2B002261F3 /* MoodSync.xcdatamodeld */; };
+		9D6D23292CEE7FCC002261F3 /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6D23282CEE7FCC002261F3 /* NotificationViewModel.swift */; };
+		9D6D232B2CEE8A28002261F3 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6D232A2CEE8A28002261F3 /* MapView.swift */; };
+		9D6D232D2CEE939D002261F3 /* CalmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6D232C2CEE939D002261F3 /* CalmView.swift */; };
 		9DBFC2512CEDD01E002ABDEB /* MoodSyncApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBFC2502CEDD01E002ABDEB /* MoodSyncApp.swift */; };
 		9DBFC2532CEDD01E002ABDEB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBFC2522CEDD01E002ABDEB /* ContentView.swift */; };
 		9DBFC2552CEDD021002ABDEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DBFC2542CEDD021002ABDEB /* Assets.xcassets */; };
@@ -18,19 +22,16 @@
 		9DBFC2732CEDD021002ABDEB /* MoodSyncUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBFC2722CEDD021002ABDEB /* MoodSyncUITestsLaunchTests.swift */; };
 		9DBFC2802CEDD072002ABDEB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBFC27F2CEDD072002ABDEB /* HomeView.swift */; };
 		9DBFC2822CEDD07E002ABDEB /* MoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBFC2812CEDD07E002ABDEB /* MoodView.swift */; };
-		9DBFC2882CEDD53F002ABDEB /* DeepBreathingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBFC2872CEDD53F002ABDEB /* DeepBreathingView.swift */; };
 		9DBFC28A2CEDD82F002ABDEB /* GetStartedOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBFC2892CEDD82F002ABDEB /* GetStartedOne.swift */; };
 		9DBFC28C2CEDD845002ABDEB /* GetStartedTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBFC28B2CEDD845002ABDEB /* GetStartedTwo.swift */; };
 		9DBFC28E2CEDD85B002ABDEB /* GetStartedThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBFC28D2CEDD85B002ABDEB /* GetStartedThree.swift */; };
 		9DBFC2902CEDD8B0002ABDEB /* MeditationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBFC28F2CEDD8B0002ABDEB /* MeditationView.swift */; };
 		9DBFC2922CEDD8D5002ABDEB /* MeditationPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBFC2912CEDD8D5002ABDEB /* MeditationPlayView.swift */; };
-		9DBFC2942CEDD8F4002ABDEB /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBFC2932CEDD8F4002ABDEB /* TabBarView.swift */; };
 		9DBFC2962CEDD8FF002ABDEB /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBFC2952CEDD8FF002ABDEB /* NotificationView.swift */; };
 		9DBFC2982CEDD930002ABDEB /* HabitFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBFC2972CEDD930002ABDEB /* HabitFormView.swift */; };
 		9DBFC29A2CEDD93F002ABDEB /* HabitListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBFC2992CEDD93F002ABDEB /* HabitListView.swift */; };
 		9DBFC29C2CEE633F002ABDEB /* DeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBFC29B2CEE633F002ABDEB /* DeleteView.swift */; };
 		9DD18F7C2CEDF94300CE79AE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD18F7B2CEDF94300CE79AE /* ProfileView.swift */; };
-		9DD18F7E2CEDF95100CE79AE /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD18F7D2CEDF95100CE79AE /* ActivityView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +52,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9D6D23212CEE116E002261F3 /* MoodSync.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MoodSync.xcdatamodel; sourceTree = "<group>"; };
+		9D6D23232CEE2B55002261F3 /* MoodListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodListView.swift; sourceTree = "<group>"; };
+		9D6D23262CEE7A2B002261F3 /* MoodSync.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MoodSync.xcdatamodel; sourceTree = "<group>"; };
+		9D6D23282CEE7FCC002261F3 /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
+		9D6D232A2CEE8A28002261F3 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		9D6D232C2CEE939D002261F3 /* CalmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmView.swift; sourceTree = "<group>"; };
 		9DBFC24D2CEDD01E002ABDEB /* MoodSync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodSync.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DBFC2502CEDD01E002ABDEB /* MoodSyncApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSyncApp.swift; sourceTree = "<group>"; };
 		9DBFC2522CEDD01E002ABDEB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -65,19 +70,16 @@
 		9DBFC2722CEDD021002ABDEB /* MoodSyncUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSyncUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9DBFC27F2CEDD072002ABDEB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		9DBFC2812CEDD07E002ABDEB /* MoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodView.swift; sourceTree = "<group>"; };
-		9DBFC2872CEDD53F002ABDEB /* DeepBreathingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepBreathingView.swift; sourceTree = "<group>"; };
 		9DBFC2892CEDD82F002ABDEB /* GetStartedOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedOne.swift; sourceTree = "<group>"; };
 		9DBFC28B2CEDD845002ABDEB /* GetStartedTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedTwo.swift; sourceTree = "<group>"; };
 		9DBFC28D2CEDD85B002ABDEB /* GetStartedThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedThree.swift; sourceTree = "<group>"; };
 		9DBFC28F2CEDD8B0002ABDEB /* MeditationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationView.swift; sourceTree = "<group>"; };
 		9DBFC2912CEDD8D5002ABDEB /* MeditationPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationPlayView.swift; sourceTree = "<group>"; };
-		9DBFC2932CEDD8F4002ABDEB /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		9DBFC2952CEDD8FF002ABDEB /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		9DBFC2972CEDD930002ABDEB /* HabitFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitFormView.swift; sourceTree = "<group>"; };
 		9DBFC2992CEDD93F002ABDEB /* HabitListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitListView.swift; sourceTree = "<group>"; };
 		9DBFC29B2CEE633F002ABDEB /* DeleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteView.swift; sourceTree = "<group>"; };
 		9DD18F7B2CEDF94300CE79AE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		9DD18F7D2CEDF95100CE79AE /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 		9DBFC2442CEDD01E002ABDEB = {
 			isa = PBXGroup;
 			children = (
+				9D6D23282CEE7FCC002261F3 /* NotificationViewModel.swift */,
 				9DBFC24F2CEDD01E002ABDEB /* MoodSync */,
 				9DBFC2652CEDD021002ABDEB /* MoodSyncTests */,
 				9DBFC26F2CEDD021002ABDEB /* MoodSyncUITests */,
@@ -135,20 +138,20 @@
 				9DBFC28B2CEDD845002ABDEB /* GetStartedTwo.swift */,
 				9DBFC28D2CEDD85B002ABDEB /* GetStartedThree.swift */,
 				9DBFC27F2CEDD072002ABDEB /* HomeView.swift */,
+				9D6D23252CEE7A2B002261F3 /* MoodSync.xcdatamodeld */,
 				9DBFC2812CEDD07E002ABDEB /* MoodView.swift */,
-				9D6D23202CEE116E002261F3 /* MoodSync.xcdatamodeld */,
 				9DBFC2542CEDD021002ABDEB /* Assets.xcassets */,
 				9DBFC2592CEDD021002ABDEB /* Persistence.swift */,
 				9DBFC2562CEDD021002ABDEB /* Preview Content */,
-				9DBFC2872CEDD53F002ABDEB /* DeepBreathingView.swift */,
 				9DBFC28F2CEDD8B0002ABDEB /* MeditationView.swift */,
+				9D6D232C2CEE939D002261F3 /* CalmView.swift */,
 				9DBFC2912CEDD8D5002ABDEB /* MeditationPlayView.swift */,
-				9DBFC2932CEDD8F4002ABDEB /* TabBarView.swift */,
 				9DD18F7B2CEDF94300CE79AE /* ProfileView.swift */,
-				9DD18F7D2CEDF95100CE79AE /* ActivityView.swift */,
+				9D6D232A2CEE8A28002261F3 /* MapView.swift */,
 				9DBFC2952CEDD8FF002ABDEB /* NotificationView.swift */,
 				9DBFC2972CEDD930002ABDEB /* HabitFormView.swift */,
 				9DBFC2992CEDD93F002ABDEB /* HabitListView.swift */,
+				9D6D23232CEE2B55002261F3 /* MoodListView.swift */,
 			);
 			path = MoodSync;
 			sourceTree = "<group>";
@@ -310,20 +313,21 @@
 			files = (
 				9DBFC25A2CEDD021002ABDEB /* Persistence.swift in Sources */,
 				9DBFC28E2CEDD85B002ABDEB /* GetStartedThree.swift in Sources */,
-				9DBFC2942CEDD8F4002ABDEB /* TabBarView.swift in Sources */,
 				9DBFC2922CEDD8D5002ABDEB /* MeditationPlayView.swift in Sources */,
 				9DBFC2902CEDD8B0002ABDEB /* MeditationView.swift in Sources */,
 				9DBFC2822CEDD07E002ABDEB /* MoodView.swift in Sources */,
-				9D6D23222CEE116E002261F3 /* MoodSync.xcdatamodeld in Sources */,
-				9DBFC2882CEDD53F002ABDEB /* DeepBreathingView.swift in Sources */,
 				9DBFC2532CEDD01E002ABDEB /* ContentView.swift in Sources */,
 				9DBFC2962CEDD8FF002ABDEB /* NotificationView.swift in Sources */,
+				9D6D23272CEE7A2B002261F3 /* MoodSync.xcdatamodeld in Sources */,
 				9DD18F7C2CEDF94300CE79AE /* ProfileView.swift in Sources */,
 				9DBFC28C2CEDD845002ABDEB /* GetStartedTwo.swift in Sources */,
-				9DD18F7E2CEDF95100CE79AE /* ActivityView.swift in Sources */,
 				9DBFC2802CEDD072002ABDEB /* HomeView.swift in Sources */,
 				9DBFC2512CEDD01E002ABDEB /* MoodSyncApp.swift in Sources */,
+				9D6D23242CEE2B55002261F3 /* MoodListView.swift in Sources */,
+				9D6D232D2CEE939D002261F3 /* CalmView.swift in Sources */,
 				9DBFC29A2CEDD93F002ABDEB /* HabitListView.swift in Sources */,
+				9D6D23292CEE7FCC002261F3 /* NotificationViewModel.swift in Sources */,
+				9D6D232B2CEE8A28002261F3 /* MapView.swift in Sources */,
 				9DBFC29C2CEE633F002ABDEB /* DeleteView.swift in Sources */,
 				9DBFC28A2CEDD82F002ABDEB /* GetStartedOne.swift in Sources */,
 				9DBFC2982CEDD930002ABDEB /* HabitFormView.swift in Sources */,
@@ -652,13 +656,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		9D6D23202CEE116E002261F3 /* MoodSync.xcdatamodeld */ = {
+		9D6D23252CEE7A2B002261F3 /* MoodSync.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				9D6D23212CEE116E002261F3 /* MoodSync.xcdatamodel */,
+				9D6D23262CEE7A2B002261F3 /* MoodSync.xcdatamodel */,
 			);
-			currentVersion = 9D6D23212CEE116E002261F3 /* MoodSync.xcdatamodel */;
-			path = MoodSync.xcdatamodeld;
+			currentVersion = 9D6D23262CEE7A2B002261F3 /* MoodSync.xcdatamodel */;
+			name = MoodSync.xcdatamodeld;
+			path = /Users/gihannemindra/Desktop/TestApp/MoodSync/MoodSync/MoodSync.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

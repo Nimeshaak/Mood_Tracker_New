@@ -1,18 +1,19 @@
-//
-//  NotificationView.swift
-//  MoodSync
-//
-//  Created by Gihan Nemindra on 11/20/24.
-//
-
 import SwiftUI
 
 struct NotificationView: View {
+    @EnvironmentObject var notificationVM: NotificationViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+        VStack {
+            Text("Your Notifications")
+                .font(.headline)
+                .padding()
 
-#Preview {
-    NotificationView()
+            List(notificationVM.notifications, id: \.self) { notification in
+                Text(notification)
+                    .padding()
+            }
+        }
+        .navigationTitle("Notifications")
+    }
 }

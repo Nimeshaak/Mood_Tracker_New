@@ -5,14 +5,14 @@ struct GetStartedThree: View {
         NavigationStack {
             ZStack {
 
-                Image("FirstImage")
+                Image("IMG1")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(minWidth: 0, maxWidth: .infinity)
                     .edgesIgnoringSafeArea(.all)
 
 
-                Color.black.opacity(0.5)
+                Color.black.opacity(0.4)
                     .edgesIgnoringSafeArea(.all)
 
 

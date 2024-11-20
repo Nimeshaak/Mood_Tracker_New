@@ -37,6 +37,7 @@ struct MoodView: View {
     }
 
     var body: some View {
+        
         VStack(spacing: 20) {
             // Title
             Text("How are you feeling today?")
@@ -81,6 +82,7 @@ struct MoodView: View {
                     .padding()
                     .background(Color.gray.opacity(0.2))
                     .cornerRadius(8)
+                    .foregroundColor(.black)  // Ensures the text is visible
             }
             .padding(.horizontal)
 
@@ -98,7 +100,17 @@ struct MoodView: View {
 
             Spacer()
         }
-        .background(Color("Background").ignoresSafeArea())
+        
+        .background(
+            ZStack {
+                Image("FirstImage") // Replace with your image name from assets
+                    .resizable()
+                    .scaledToFill()
+                    .ignoresSafeArea() // Ensures the image fills the entire screen
+                    .blur(radius: 10) 
+            }
+        )
+
     }
 
     private func saveMood() {

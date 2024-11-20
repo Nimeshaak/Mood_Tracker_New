@@ -7,6 +7,8 @@ struct MeditationPlayView: View {
     @State private var isTimerRunning = false
     @State private var showCompletionMessage = false
     @State private var audioPlayer: AVAudioPlayer?
+    @State private var breathingInstruction: String = "Breathe In" // Default first instruction
+    @State private var breathCycle: Int = 0 // Keeps track of the breath cycle
 
     var body: some View {
         VStack {
@@ -24,25 +26,17 @@ struct MeditationPlayView: View {
                 .foregroundColor(.blue)
                 .padding(.bottom, 40)
 
-            // Play Button
-            if !isTimerRunning {
-                Button(action: {
-                    startMeditation()
-                }) {
-                    Text("Start Meditation")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .frame(width: 200, height: 50)
-                        .background(Color.green)
-                        .cornerRadius(10)
-                }
-            }
+            // Breathing Instruction
+            Text(breathingInstruction)
+                .font(.title)
+                .foregroundColor(.green)
+                .padding(.bottom, 20)
 
             Spacer()
         }
         .padding()
         .onAppear {
-            setupAudioPlayer()
+            startMeditation() // Start meditation as soon as the view appears
         }
         .alert(isPresented: $showCompletionMessage) {
             Alert(
@@ -72,6 +66,7 @@ struct MeditationPlayView: View {
         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
             if timeRemaining > 0 {
                 timeRemaining -= 1
+                updateBreathingCycle()
             } else {
                 timer.invalidate()
                 isTimerRunning = false
@@ -79,6 +74,18 @@ struct MeditationPlayView: View {
                 showCompletionMessage = true
             }
         }
+    }
+
+    // Update Breathing Instructions
+    private func updateBreathingCycle() {
+        if breathCycle == 0 {
+            breathingInstruction = "Breathe In"
+        } else if breathCycle == 1 {
+            breathingInstruction = "Breathe Out"
+        }
+
+        // Cycle breathing instructions
+        breathCycle = (breathCycle + 1) % 2
     }
 
     // Setup Audio Player

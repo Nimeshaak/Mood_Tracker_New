@@ -13,148 +13,184 @@ struct HomeView: View {
     @State private var isNewDay = false
 
     var body: some View {
-        NavigationView {
-            VStack(spacing: 20) {
-                // Header Section
-                HStack {
-                    Text("Home")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                    Spacer()
-                    NavigationLink(destination: Text("Notifications Page")) {
-                        Image(systemName: "bell")
-                            .font(.title)
-                            .foregroundColor(.primary)
-                    }
-                }
-                .padding(.horizontal)
-                .padding(.top, 20)
-                
-                // Mood Section
-                if let todayMood = moods.first(where: { isToday($0.timestamp) }) {
-                    // Display today's mood if available
-                    VStack(alignment: .leading, spacing: 10) {
+        TabView {
+            NavigationView {
+                ScrollView {  // Wrapping the whole view in a ScrollView
+                    VStack(spacing: 20) {
+                        // Header Section
                         HStack {
-                            Text("Last Updated: \(todayMood.lastUpdated?.formatted() ?? "Unknown")")
-                                .font(.title2)
-                                .fontWeight(.medium)
-                                .foregroundColor(.primary)
-                            
+                            Text("Home")
+                                .font(.largeTitle)
+                                .fontWeight(.bold)
                             Spacer()
-                            
-                            NavigationLink(destination: MoodView()) {
-                                Image(systemName: "pencil")
-                                    .font(.title2)
-                                    .foregroundColor(.blue)
+                            NavigationLink(destination: Text("Notifications Page")) {
+                                Image(systemName: "bell")
+                                    .font(.title)
+                                    .foregroundColor(.primary)
                             }
                         }
-                        .padding(.horizontal, 16)
+                        .padding(.horizontal)
+                        .padding(.top, 10)  // Reduced top padding to remove extra space
                         
-                        Text("Today's Mood: \(todayMood.selectedEmoji ?? "No mood selected")")
-                            .font(.headline)
-                            .foregroundColor(.blue)
-                            .padding(.leading, 16)
-                        
-                        // Display the note if it exists
-                        if let note = todayMood.note, !note.isEmpty {
-                            Text("Note: \(note)")
-                                .font(.body)
-                                .foregroundColor(.primary)
-                                .padding(.leading, 16)
-                                .padding(.top, 5)
+                        // Mood Section
+                        if let todayMood = moods.first(where: { isToday($0.timestamp) }) {
+                            // Display today's mood if available
+                            VStack(alignment: .leading, spacing: 10) {
+                                HStack {
+                                    Text("Last Updated: \(todayMood.lastUpdated?.formatted() ?? "Unknown")")
+                                        .font(.subheadline)  // Smaller font size for Last Updated
+                                        .fontWeight(.light)  // Lighter weight for Last Updated
+                                        .foregroundColor(.primary)
+                                    
+                                    Spacer()
+                                    
+                                    NavigationLink(destination: MoodView()) {
+                                        Image(systemName: "pencil")
+                                            .font(.title2)
+                                            .foregroundColor(.blue)
+                                    }
+                                }
+                                .padding(.horizontal, 16)
+                                
+                                Text("Today's Mood: \(todayMood.selectedEmoji ?? "No mood selected")")
+                                    .font(.title)            // Larger font size for Today's Mood
+                                    .fontWeight(.semibold)   // Semi-bold for Today's Mood
+                                    .foregroundColor(.blue)
+                                    .padding(.leading, 16)
+                                
+                                // Display the note if it exists
+                                if let note = todayMood.note, !note.isEmpty {
+                                    Text("Note: \(note)")
+                                        .font(.body)
+                                        .foregroundColor(.primary)
+                                        .padding(.leading, 16)
+                                        .padding(.top, 5)
+                                }
+                            }
+                            .padding(.vertical, 40)
+                            .background(Color.white) // Pastel blue background
+                            .cornerRadius(0)
+                        } else {
+                            // If no mood is selected today, show the emoji selection
+                            VStack(alignment: .leading, spacing: 0) {
+                                Text("How are You Feeling Today?")
+                                    .font(.title2)
+                                    .fontWeight(.medium)
+                                    .padding(.bottom, 0)
+                                    .padding(.leading, 16)
+                                    .foregroundColor(.primary)
+                                    .padding(.top, 20) // Add padding to the top here
+                                HStack(spacing: 12) {
+                                    moodButton(emoji: "😊")
+                                    moodButton(emoji: "😢")
+                                    moodButton(emoji: "😡")
+                                    moodButton(emoji: "😱")
+                                    moodButton(emoji: "😴")
+                                }
+                                .padding()
+                                .background(Color.white) // Pastel blue background
+                                .cornerRadius(15)
+                            }
                         }
-                    }
-                    .padding()
-                    .background(Color.gray.opacity(0.1))
-                    .cornerRadius(15)
-                } else {
-                    // If no mood is selected today, show the emoji selection
-                    VStack(alignment: .leading, spacing: 0) {
-                        Text("How are You Feeling Today?")
+
+                        Text("Motivational Quotes")
                             .font(.title2)
-                            .fontWeight(.bold)
-                            .padding(.leading, 16)
-                            .foregroundColor(.primary)
-                        HStack(spacing: 12) {
-                            moodButton(emoji: "😊")
-                            moodButton(emoji: "😢")
-                            moodButton(emoji: "😡")
-                            moodButton(emoji: "😱")
-                            moodButton(emoji: "😴")
+                            .fontWeight(.medium)
+                            .padding(.top, 0)
+                        
+                        // Motivational Quotes Section
+                        VStack(alignment: .center, spacing: 10) {
+                            Text("“The only way to do great work is to love what you do. Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful.” – Albert Schweitzer")
+                                .font(.body)
+                                .italic()
+                                .foregroundColor(.black)
+                                .multilineTextAlignment(.center)
+                                .padding(.horizontal, 30)
+                                .padding(.vertical, 20)
+                                .lineLimit(nil)
+                                .fixedSize(horizontal: false, vertical: true)
+                            
                         }
-                        .padding()
-                        .background(Color.gray.opacity(0.1))
+                        .frame(maxWidth: .infinity)
+                        .padding(.horizontal)
+                        .background(
+                            LinearGradient(
+                                gradient: Gradient(colors: [Color.green.opacity(0.3), Color.blue.opacity(0.3)]),
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            )
+                        )
+
                         .cornerRadius(15)
-                    }
-                }
-                
-                // Motivational Quotes Section
-                VStack(alignment: .leading, spacing: 10) {
-                    Text("Motivational Quotes")
-                        .font(.title2)
-                        .fontWeight(.medium)
-                    
-                    Text("“The only way to do great work is to love what you do.” – Steve Jobs")
-                        .font(.body)
-                        .italic()
-                        .foregroundColor(.secondary)
-                        .lineLimit(nil)
-                        .fixedSize(horizontal: false, vertical: true)
-                }
-                .frame(maxWidth: .infinity)
-                .padding()
-                .background(Color.gray.opacity(0.1))
-                .cornerRadius(15)
-                .padding(.horizontal)
-                .frame(height: 150)
-                
-                // Notifications Section
-                HStack {
-                    Image(systemName: "bell.fill")
-                        .foregroundColor(.orange)
-                    Text("You have 3 new notifications")
-                        .font(.body)
-                        .foregroundColor(.primary)
-                    Spacer()
-                    NavigationLink(destination: Text("Notifications Page")) {
-                        Text("View All")
-                            .font(.body)
-                            .foregroundColor(.blue)
-                    }
-                }
-                .padding()
-                .background(Color.gray.opacity(0.1))
-                .cornerRadius(15)
-                .padding(.horizontal)
+                        .padding(.horizontal)
+                        .frame(height: 180) // Increased height for motivational quotes section
 
-                // Horizontal Scrollable Box Views
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 20) {
-                        BoxView(imageName: "IMG1", size: CGSize(width: 160, height: 160))
-                        BoxView(imageName: "IMG2", size: CGSize(width: 160, height: 160))
-                        BoxView(imageName: "IMG3", size: CGSize(width: 160, height: 160))
-                    }
-                    .padding()
-                }
-                .background(Color.gray.opacity(0.1))
-                .background(Color.white)
-                .cornerRadius(15)
-                .padding(.horizontal)
+                        // Title for the last card with 3 boxes
+                        Text("Your Mood History")
+                            .font(.title2)
+                            .fontWeight(.medium)
+                            .padding(.top, 10)
 
-                Spacer()
-            }
-            .navigationBarHidden(true)
-            .background(
-                LinearGradient(
-                    gradient: Gradient(colors: [Color.blue.opacity(0.2), Color.green.opacity(0.3)]),
-                    startPoint: .top,
-                    endPoint: .bottom
+                        // Stack views one below another instead of horizontal scroll
+                        VStack(spacing: 20) {
+                            NavigationLink(destination: DeepBreathingView()) {
+                                BoxView(imageName: "IMG1", size: CGSize(width: 320, height: 160), description: "Here is a description of this image")
+                            }
+                            NavigationLink(destination: DeepBreathingView()) {
+                                BoxView(imageName: "IMG2", size: CGSize(width: 320, height: 160), description: "Another description for the second image")
+                            }
+                            NavigationLink(destination: DeepBreathingView()) {
+                                BoxView(imageName: "IMG3", size: CGSize(width: 320, height: 160), description: "This is the description for the third image")
+                            }
+                        }
+                        .padding(.vertical)
+
+                        Spacer()
+                    }
+                    .background(
+                        Color(red: 0.82, green: 0.96, blue: 0.93) // Your specified color (soft pastel blue)
+                    )
+                    .edgesIgnoringSafeArea(.top)  // This removes the top safe area
+                    .onAppear {
+                        startTimerForMidnightCheck()
+                        checkIfNewDay()
+                    }
+                }
+                .navigationBarHidden(true)
+                .background(
+                    Color(red: 0.82, green: 0.96, blue: 0.93) // Apply the same background color across the entire screen
                 )
-            )
-            .onAppear {
-                startTimerForMidnightCheck()
-                checkIfNewDay()
             }
+            .tabItem {
+                Image(systemName: "house.fill")
+                Text("Home")
+            }
+            
+            MoodListView()
+                            .tabItem {
+                                Image(systemName: "chart.bar.fill")
+                                Text("Activity")
+                            }
+            
+            MoodView()
+                            .tabItem {
+                                Image(systemName: "plus.circle.fill")
+                                Text("Add")
+                            }
+                        
+                        // Habit tab with HabitListView
+                        HabitListView()
+                            .tabItem {
+                                Image(systemName: "list.bullet")
+                                Text("Habit")
+                            }
+                        
+                        // Profile tab with ProfileView
+                        ProfileView()
+                            .tabItem {
+                                Image(systemName: "person.crop.circle.fill")
+                                Text("Profile")
+                            }
         }
     }
 
@@ -225,10 +261,16 @@ struct HomeView: View {
     }
 }
 
+// Custom pastel blue color
+extension Color {
+    static let pastelBlue = Color(red: 0.84, green: 0.92, blue: 1.0) // Soft pastel blue
+}
+
 struct BoxView: View {
     let imageName: String
     let size: CGSize
-    
+    let description: String
+
     var body: some View {
         VStack {
             Image(imageName)
@@ -238,9 +280,18 @@ struct BoxView: View {
                 .clipped()
                 .cornerRadius(10)
                 .shadow(radius: 6)
+
+            Text(description)
+                .font(.subheadline)
+                .fontWeight(.medium)
+                .foregroundColor(.primary)
+                .padding(.top, 5)
         }
-        .frame(width: size.width, height: size.height)
-        .clipped()
+        .frame(width: size.width, height: size.height + 40)
+        .padding()  // Padding around the content
+        .background(Color.white)  // Background applied to the content itself
+        .cornerRadius(15)
+        .shadow(radius: 6) // Optional shadow
     }
 }
 

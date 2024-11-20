@@ -2,48 +2,61 @@ import SwiftUI
 
 struct DeepBreathingView: View {
     var body: some View {
-        ZStack {
-            // Background Image
-            Image("backgroundImage") // Replace with your image asset name
-                .resizable()
-                .scaledToFill()
-                .edgesIgnoringSafeArea(.all)
-                .overlay(Color.black.opacity(0.3))
-                .blur(radius: 10)
+        NavigationView {  // Make sure the NavigationLink is inside a NavigationView
+            ZStack {
+                // Background Image
+                Image("IMG2") // Replace with your image asset name
+                    .resizable()
+                    .scaledToFill()
+                    .edgesIgnoringSafeArea(.all)
+                    .overlay(Color.black.opacity(0.3))
+                    .blur(radius: 10)
 
-            // Content
-            VStack {
-                Spacer()
+                // Content
+                VStack {
+                    Spacer()
 
-                Text("Deep Breathing")
-                    .font(.system(size: 24, weight: .bold))
-                    .foregroundColor(.black)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, 20)
-                    .padding(.bottom, 8)
-
-                Text("A simple technique to calm your mind. Inhale deeply through your nose and exhale slowly.")
-                    .font(.system(size: 16))
-                    .foregroundColor(.black)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, 30)
-                    .fixedSize(horizontal: false, vertical: true)
-                    .padding(.bottom, 20)
-
-                NavigationLink(destination: MeditationPlayView()) {
-                    Text("Start")
-                        .font(.system(size: 18, weight: .bold))
+                    Text("Deep Breathing")
+                        .font(.system(size: 24, weight: .bold))
                         .foregroundColor(.white)
-                        .frame(width: 150, height: 50)
-                        .background(Color.blue)
-                        .cornerRadius(25)
-                }
-                .padding(.bottom, 40)
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal, 20)
+                        .padding(.bottom, 8)
+                        .frame(maxWidth: .infinity) // Prevent overflow
+                    
+                    VStack(alignment: .center, spacing: 10) {
+                        Text("“The only way to do great work is to love what you do. Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful.” – Albert Schweitzer")
+                            .font(.body)
+                            .italic()
+                            .foregroundColor(.white)
+                            .multilineTextAlignment(.center)
+                            .padding(.horizontal, 40)
+                            .padding(.vertical, 50)
+                            .lineLimit(nil)
+                            .fixedSize(horizontal: false, vertical: true) // Ensures text wraps
+                            .frame(maxWidth: .infinity) // Prevent overflow
+                    }
+                    .padding(.horizontal, 20) // To avoid text touching screen edges
 
-                Spacer()
+                    // Ensure the NavigationLink is tappable
+                    NavigationLink(destination: MeditationPlayView()) {
+                        Text("Start")
+                            .font(.system(size: 18, weight: .bold))
+                            .foregroundColor(.white)
+                            .frame(width: 150, height: 50)
+                            .background(Color.blue)
+                            .cornerRadius(25)
+                            .padding(.bottom, 40)
+                            .contentShape(Rectangle()) // Make the entire button area tappable
+                    }
+                    .buttonStyle(PlainButtonStyle()) // Remove default button styles that might interfere
+
+                    Spacer()
+                }
+                .padding(.horizontal, 20) // Ensures overall content isn't too close to edges
             }
+            .navigationBarBackButtonHidden(false) // Ensure the back button shows if you're navigating from here
         }
-        .navigationBarBackButtonHidden(false) // Ensure the back button shows if you're navigating from here
     }
 }
 
