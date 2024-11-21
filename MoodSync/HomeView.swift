@@ -69,7 +69,7 @@ struct HomeView: View {
                                     }
                                 }
                                 .padding(.vertical, 40)
-                                .background(Color.white)
+                                .background(Color.blue.opacity(0.1))
                                 .cornerRadius(0)
                             } else {
                                 VStack(alignment: .leading, spacing: 0) {
@@ -82,15 +82,14 @@ struct HomeView: View {
                                         .padding(.top, 20)
                                     
                                     HStack(spacing: 12) {
-                                        moodButton(emoji: "😊")
-                                        moodButton(emoji: "😢")
-                                        moodButton(emoji: "😡")
-                                        moodButton(emoji: "😱")
-                                        moodButton(emoji: "😴")
+                                        moodButton(emoji: "😄")
+                                        moodButton(emoji: "🙂")
+                                        moodButton(emoji: "😐")
+                                        moodButton(emoji: "☹️")
+                                        moodButton(emoji: "😞")
                                     }
                                     .padding()
-                                    .background(Color.white)
-                                    .cornerRadius(15)
+                                    .background(Color.blue.opacity(0.1))
                                 }
                             }
                             
@@ -133,13 +132,13 @@ struct HomeView: View {
                             // Stack views one below another
                             VStack(spacing: 20) {
                                 NavigationLink(destination: DeepBreathingView()) {
-                                    BoxView(imageName: "IMG1", size: CGSize(width: 320, height: 160), description: "Here is a description of this image")
+                                    BoxView(imageName: "IMG1", size: CGSize(width: 320, height: 160), description: "Follow a guided meditation session to center your thoughts, calm your nerves, and enhance mindfulness.")
                                 }
-                                NavigationLink(destination: DeepBreathingView()) {
-                                    BoxView(imageName: "IMG2", size: CGSize(width: 320, height: 160), description: "Another description for the second image")
+                                NavigationLink(destination: RelaxingView()) {
+                                    BoxView(imageName: "IMG2", size: CGSize(width: 320, height: 160), description: "Relax your mind by listening to these soothing music that helps reduce stress and bring your inner peace.")
                                 }
-                                NavigationLink(destination: DeepBreathingView()) {
-                                    BoxView(imageName: "IMG3", size: CGSize(width: 320, height: 160), description: "This is the description for the third image")
+                                NavigationLink(destination: GroundingView()) {
+                                    BoxView(imageName: "IMG3", size: CGSize(width: 320, height: 160), description: "Engage in a simple exercise routine to boost your mood, increase energy, and promote mental clarity.")
                                 }
                             }
                             .padding(.vertical)
@@ -164,7 +163,7 @@ struct HomeView: View {
                     Image(systemName: "house.fill")
                     Text("Home")
                 }
-                        .background(Color.white.opacity(0.5)) // Apply semi-transparent white background for this tab
+                .background(Color.white.opacity(1.0)) // Apply semi-transparent white background for this tab
                         .accentColor(.primary)
                         .onAppear {
                             UITabBar.appearance().backgroundColor = UIColor.white.withAlphaComponent(1.0)
@@ -200,7 +199,7 @@ struct HomeView: View {
                         UITabBar.appearance().backgroundImage = UIImage()
                     }
                 
-                HabitsView()
+                HabitFormView()
                     .navigationBarBackButtonHidden(true)
                     .tabItem {
                         Image(systemName: "list.bullet")
@@ -232,23 +231,25 @@ struct HomeView: View {
     }
 
     private func moodButton(emoji: String) -> some View {
-        Button(action: {
-            saveMood(emoji: emoji)
-        }) {
+        NavigationLink(destination: MoodView()) {
             Text(emoji)
                 .font(.largeTitle)
                 .padding()
                 .background(Color.gray.opacity(0.2))
                 .cornerRadius(10)
+                .onTapGesture {
+                    saveMood(emoji: emoji)
+                }
         }
     }
+
 
     private func saveMood(emoji: String) {
         let newMood = Mood(context: viewContext)
         newMood.selectedEmoji = emoji
         newMood.timestamp = Date()
         newMood.lastUpdated = Date()
-        newMood.note = "Feeling \(emoji)"
+        newMood.note = ""
 
         do {
             try viewContext.save()

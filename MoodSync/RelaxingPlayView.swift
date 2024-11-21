@@ -1,7 +1,7 @@
 import SwiftUI
 import AVFoundation
 
-struct MeditationPlayView: View {
+struct RelaxingPlayView: View {
     @Environment(\.presentationMode) var presentationMode // For dismissing the screen
     @State private var timerValue: Int = 60// Timer duration in seconds
     @State private var timeRemaining: Int = 60
@@ -178,9 +178,9 @@ struct MeditationPlayView: View {
     }
 }
 
-struct MeditationPlayView_Previews: PreviewProvider {
+struct RelaxingPlayView_Previews: PreviewProvider {
     static var previews: some View {
-        MeditationPlayView()
+        RelaxingPlayView()
             .previewDevice("iPhone 14 Pro")
     }
 }

@@ -86,33 +86,20 @@ struct HabitFormView: View {
                 .cornerRadius(8)
                 .shadow(radius: 5)
             
-            // Save and Cancel Buttons
-            HStack(spacing: 20) {
-                Button(action: {
-                    saveHabit()
-                }) {
-                    Text("Save")
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(8)
-                }
-                
-                Button(action: {
-                    // Action for cancel
-                }) {
-                    Text("Cancel")
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color.gray.opacity(0.2))
-                        .foregroundColor(.black)
-                        .cornerRadius(8)
-                }
+            // Save Button
+            Button(action: {
+                saveHabit()
+            }) {
+                Text("Save")
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(8)
             }
         }
         .padding()
-        .background(Color(red: 0.9, green: 0.96, blue: 1))
+        .background(Color(red: 0.82, green: 0.96, blue: 0.93))
         .edgesIgnoringSafeArea(.bottom)
         .alert(isPresented: $isAlertPresented) {
             Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))

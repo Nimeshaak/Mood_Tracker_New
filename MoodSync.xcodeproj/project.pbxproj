@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		9D6D23242CEE2B55002261F3 /* MoodListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6D23232CEE2B55002261F3 /* MoodListView.swift */; };
 		9D6D23272CEE7A2B002261F3 /* MoodSync.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9D6D23252CEE7A2B002261F3 /* MoodSync.xcdatamodeld */; };
-		9D6D23292CEE7FCC002261F3 /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6D23282CEE7FCC002261F3 /* NotificationViewModel.swift */; };
 		9D6D232B2CEE8A28002261F3 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6D232A2CEE8A28002261F3 /* MapView.swift */; };
 		9D6D232D2CEE939D002261F3 /* CalmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6D232C2CEE939D002261F3 /* CalmView.swift */; };
-		9D6D232F2CEEE7D9002261F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6D232E2CEEE7D9002261F3 /* AppDelegate.swift */; };
 		9D6D23332CEEFEC1002261F3 /* Thoughtful.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9D6D23322CEEFEC1002261F3 /* Thoughtful.mp3 */; };
-		9D6D23352CEF1B38002261F3 /* HabitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6D23342CEF1B38002261F3 /* HabitsView.swift */; };
+		9D6D23372CEF4653002261F3 /* GroundingPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6D23362CEF4653002261F3 /* GroundingPlayView.swift */; };
+		9D6D23392CEF4AE8002261F3 /* RelaxingPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6D23382CEF4AE8002261F3 /* RelaxingPlayView.swift */; };
+		9D6D233B2CEF4DED002261F3 /* GroundingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6D233A2CEF4DED002261F3 /* GroundingView.swift */; };
+		9D6D233D2CEF4E1A002261F3 /* RelaxingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6D233C2CEF4E1A002261F3 /* RelaxingView.swift */; };
 		9DBFC2512CEDD01E002ABDEB /* MoodSyncApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBFC2502CEDD01E002ABDEB /* MoodSyncApp.swift */; };
 		9DBFC2532CEDD01E002ABDEB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBFC2522CEDD01E002ABDEB /* ContentView.swift */; };
 		9DBFC2552CEDD021002ABDEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DBFC2542CEDD021002ABDEB /* Assets.xcassets */; };
@@ -32,8 +33,9 @@
 		9DBFC2922CEDD8D5002ABDEB /* MeditationPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBFC2912CEDD8D5002ABDEB /* MeditationPlayView.swift */; };
 		9DBFC2962CEDD8FF002ABDEB /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBFC2952CEDD8FF002ABDEB /* NotificationView.swift */; };
 		9DBFC2982CEDD930002ABDEB /* HabitFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBFC2972CEDD930002ABDEB /* HabitFormView.swift */; };
-		9DBFC29C2CEE633F002ABDEB /* DeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBFC29B2CEE633F002ABDEB /* DeleteView.swift */; };
 		9DD18F7C2CEDF94300CE79AE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD18F7B2CEDF94300CE79AE /* ProfileView.swift */; };
+		9DE483F42CEF595700DC39DA /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE483F32CEF595700DC39DA /* SignInView.swift */; };
+		9DE483F62CEF596E00DC39DA /* SignUpVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE483F52CEF596E00DC39DA /* SignUpVIew.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,12 +58,13 @@
 /* Begin PBXFileReference section */
 		9D6D23232CEE2B55002261F3 /* MoodListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodListView.swift; sourceTree = "<group>"; };
 		9D6D23262CEE7A2B002261F3 /* MoodSync.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MoodSync.xcdatamodel; sourceTree = "<group>"; };
-		9D6D23282CEE7FCC002261F3 /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
 		9D6D232A2CEE8A28002261F3 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		9D6D232C2CEE939D002261F3 /* CalmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmView.swift; sourceTree = "<group>"; };
-		9D6D232E2CEEE7D9002261F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D6D23322CEEFEC1002261F3 /* Thoughtful.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Thoughtful.mp3; path = "../../../../Music/Music/Media.localized/Music/Pufino/Unknown Album/Thoughtful.mp3"; sourceTree = "<group>"; };
-		9D6D23342CEF1B38002261F3 /* HabitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsView.swift; sourceTree = "<group>"; };
+		9D6D23362CEF4653002261F3 /* GroundingPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroundingPlayView.swift; sourceTree = "<group>"; };
+		9D6D23382CEF4AE8002261F3 /* RelaxingPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelaxingPlayView.swift; sourceTree = "<group>"; };
+		9D6D233A2CEF4DED002261F3 /* GroundingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroundingView.swift; sourceTree = "<group>"; };
+		9D6D233C2CEF4E1A002261F3 /* RelaxingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelaxingView.swift; sourceTree = "<group>"; };
 		9DBFC24D2CEDD01E002ABDEB /* MoodSync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodSync.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DBFC2502CEDD01E002ABDEB /* MoodSyncApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSyncApp.swift; sourceTree = "<group>"; };
 		9DBFC2522CEDD01E002ABDEB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -82,8 +85,9 @@
 		9DBFC2912CEDD8D5002ABDEB /* MeditationPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationPlayView.swift; sourceTree = "<group>"; };
 		9DBFC2952CEDD8FF002ABDEB /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		9DBFC2972CEDD930002ABDEB /* HabitFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitFormView.swift; sourceTree = "<group>"; };
-		9DBFC29B2CEE633F002ABDEB /* DeleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteView.swift; sourceTree = "<group>"; };
 		9DD18F7B2CEDF94300CE79AE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		9DE483F32CEF595700DC39DA /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		9DE483F52CEF596E00DC39DA /* SignUpVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVIew.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +118,6 @@
 		9DBFC2442CEDD01E002ABDEB = {
 			isa = PBXGroup;
 			children = (
-				9D6D23282CEE7FCC002261F3 /* NotificationViewModel.swift */,
 				9DBFC24F2CEDD01E002ABDEB /* MoodSync */,
 				9DBFC2652CEDD021002ABDEB /* MoodSyncTests */,
 				9DBFC26F2CEDD021002ABDEB /* MoodSyncUITests */,
@@ -135,29 +138,32 @@
 		9DBFC24F2CEDD01E002ABDEB /* MoodSync */ = {
 			isa = PBXGroup;
 			children = (
-				9DBFC29B2CEE633F002ABDEB /* DeleteView.swift */,
 				9DBFC2502CEDD01E002ABDEB /* MoodSyncApp.swift */,
 				9DBFC2522CEDD01E002ABDEB /* ContentView.swift */,
 				9DBFC2892CEDD82F002ABDEB /* GetStartedOne.swift */,
 				9DBFC28B2CEDD845002ABDEB /* GetStartedTwo.swift */,
 				9DBFC28D2CEDD85B002ABDEB /* GetStartedThree.swift */,
 				9DBFC27F2CEDD072002ABDEB /* HomeView.swift */,
-				9D6D23252CEE7A2B002261F3 /* MoodSync.xcdatamodeld */,
 				9DBFC2812CEDD07E002ABDEB /* MoodView.swift */,
-				9DBFC2542CEDD021002ABDEB /* Assets.xcassets */,
-				9DBFC2592CEDD021002ABDEB /* Persistence.swift */,
-				9DBFC2562CEDD021002ABDEB /* Preview Content */,
 				9DBFC28F2CEDD8B0002ABDEB /* MeditationView.swift */,
-				9D6D232C2CEE939D002261F3 /* CalmView.swift */,
+				9D6D233C2CEF4E1A002261F3 /* RelaxingView.swift */,
+				9D6D233A2CEF4DED002261F3 /* GroundingView.swift */,
 				9DBFC2912CEDD8D5002ABDEB /* MeditationPlayView.swift */,
-				9D6D23322CEEFEC1002261F3 /* Thoughtful.mp3 */,
-				9DD18F7B2CEDF94300CE79AE /* ProfileView.swift */,
-				9D6D232A2CEE8A28002261F3 /* MapView.swift */,
-				9D6D23342CEF1B38002261F3 /* HabitsView.swift */,
+				9D6D23382CEF4AE8002261F3 /* RelaxingPlayView.swift */,
+				9D6D23362CEF4653002261F3 /* GroundingPlayView.swift */,
+				9D6D232C2CEE939D002261F3 /* CalmView.swift */,
+				9DBFC2592CEDD021002ABDEB /* Persistence.swift */,
 				9DBFC2952CEDD8FF002ABDEB /* NotificationView.swift */,
 				9DBFC2972CEDD930002ABDEB /* HabitFormView.swift */,
 				9D6D23232CEE2B55002261F3 /* MoodListView.swift */,
-				9D6D232E2CEEE7D9002261F3 /* AppDelegate.swift */,
+				9DD18F7B2CEDF94300CE79AE /* ProfileView.swift */,
+				9D6D232A2CEE8A28002261F3 /* MapView.swift */,
+				9DE483F52CEF596E00DC39DA /* SignUpVIew.swift */,
+				9DE483F32CEF595700DC39DA /* SignInView.swift */,
+				9D6D23252CEE7A2B002261F3 /* MoodSync.xcdatamodeld */,
+				9DBFC2542CEDD021002ABDEB /* Assets.xcassets */,
+				9D6D23322CEEFEC1002261F3 /* Thoughtful.mp3 */,
+				9DBFC2562CEDD021002ABDEB /* Preview Content */,
 			);
 			path = MoodSync;
 			sourceTree = "<group>";
@@ -322,23 +328,25 @@
 				9DBFC28E2CEDD85B002ABDEB /* GetStartedThree.swift in Sources */,
 				9DBFC2922CEDD8D5002ABDEB /* MeditationPlayView.swift in Sources */,
 				9DBFC2902CEDD8B0002ABDEB /* MeditationView.swift in Sources */,
+				9D6D23392CEF4AE8002261F3 /* RelaxingPlayView.swift in Sources */,
 				9DBFC2822CEDD07E002ABDEB /* MoodView.swift in Sources */,
 				9DBFC2532CEDD01E002ABDEB /* ContentView.swift in Sources */,
+				9D6D233B2CEF4DED002261F3 /* GroundingView.swift in Sources */,
 				9DBFC2962CEDD8FF002ABDEB /* NotificationView.swift in Sources */,
 				9D6D23272CEE7A2B002261F3 /* MoodSync.xcdatamodeld in Sources */,
 				9DD18F7C2CEDF94300CE79AE /* ProfileView.swift in Sources */,
 				9DBFC28C2CEDD845002ABDEB /* GetStartedTwo.swift in Sources */,
-				9D6D23352CEF1B38002261F3 /* HabitsView.swift in Sources */,
+				9DE483F62CEF596E00DC39DA /* SignUpVIew.swift in Sources */,
 				9DBFC2802CEDD072002ABDEB /* HomeView.swift in Sources */,
 				9DBFC2512CEDD01E002ABDEB /* MoodSyncApp.swift in Sources */,
+				9DE483F42CEF595700DC39DA /* SignInView.swift in Sources */,
 				9D6D23242CEE2B55002261F3 /* MoodListView.swift in Sources */,
 				9D6D232D2CEE939D002261F3 /* CalmView.swift in Sources */,
-				9D6D23292CEE7FCC002261F3 /* NotificationViewModel.swift in Sources */,
 				9D6D232B2CEE8A28002261F3 /* MapView.swift in Sources */,
-				9DBFC29C2CEE633F002ABDEB /* DeleteView.swift in Sources */,
-				9D6D232F2CEEE7D9002261F3 /* AppDelegate.swift in Sources */,
+				9D6D233D2CEF4E1A002261F3 /* RelaxingView.swift in Sources */,
 				9DBFC28A2CEDD82F002ABDEB /* GetStartedOne.swift in Sources */,
 				9DBFC2982CEDD930002ABDEB /* HabitFormView.swift in Sources */,
+				9D6D23372CEF4653002261F3 /* GroundingPlayView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

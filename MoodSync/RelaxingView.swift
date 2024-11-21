@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct DeepBreathingView: View {
+struct RelaxingView: View {
     var body: some View {
         NavigationView {  // Make sure the NavigationLink is inside a NavigationView
             ZStack {
@@ -16,7 +16,7 @@ struct DeepBreathingView: View {
                 VStack {
                     Spacer()
 
-                    Text("Guided Meditation Session")
+                    Text("Soothing Music for Relaxation")
                         .font(.system(size: 24, weight: .bold))
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
@@ -25,7 +25,7 @@ struct DeepBreathingView: View {
                         .frame(maxWidth: .infinity) // Prevent overflow
                     
                     VStack(alignment: .center, spacing: 10) {
-                        Text("Immerse yourself in a calming guided meditation. This session is designed to help you find balance, reduce anxiety, and practice mindfulness, leaving you with a sense of clarity and inner peace.")
+                        Text("Listen to soothing melodies crafted to relax the mind and body. These peaceful tunes are scientifically proven to help reduce stress, enhance focus, and foster tranquility within.")
                             .font(.body)
                             .italic()
                             .foregroundColor(.white)
@@ -39,7 +39,7 @@ struct DeepBreathingView: View {
                     .padding(.horizontal, 20) // To avoid text touching screen edges
 
                     // Ensure the NavigationLink is tappable
-                    NavigationLink(destination: MeditationPlayView()) {
+                    NavigationLink(destination: GroundingPlayView()) {
                         Text("Start")
                             .font(.system(size: 18, weight: .bold))
                             .foregroundColor(.white)
@@ -60,9 +60,9 @@ struct DeepBreathingView: View {
     }
 }
 
-struct DeepBreathingView_Previews: PreviewProvider {
+struct DRelaxingView_Previews: PreviewProvider {
     static var previews: some View {
-        DeepBreathingView()
+        RelaxingView()
             .previewDevice("iPhone 14 Pro")
     }
 }

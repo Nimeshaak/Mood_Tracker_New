@@ -19,14 +19,14 @@ struct GetStartedTwo: View {
                 VStack {
                     Spacer()
 
-                    Text("MoodSync")
+                    Text("Mindful Breathing")
                         .font(.custom("Poppins-Bold", size: 36))
                         .foregroundColor(Color(red: 0.82, green: 0.96, blue: 0.93))
                         .multilineTextAlignment(.center)
                         .padding(.horizontal, 30)
                         .padding(.bottom, 12)
                     
-                    Text("Track your mood and uncover new ways to nourish your mind while exploring activities for well-being.")
+                    Text("Access guided breathing exercises designed to help reduce stress and promote relaxation.")
                         .font(.custom("Poppins", size: 20))
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)

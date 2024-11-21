@@ -11,33 +11,50 @@ struct MoodListView: View {
 
     var body: some View {
         NavigationView {
-            List {
-                ForEach(moods) { mood in
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text("Mood: \(mood.selectedEmoji ?? "Unknown")")
-                            .font(.headline)
-                        
-                        if let note = mood.note, !note.isEmpty {
-                            Text("Note: \(note)")
-                                .font(.subheadline)
-                                .foregroundColor(.secondary)
-                        }
+            VStack {
+                Text("Mood History")
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.leading)
 
-                        if let timestamp = mood.timestamp {
-                            Text("Date: \(timestamp.formatted(date: .abbreviated, time: .shortened))")
-                                .font(.caption)
-                                .foregroundColor(.gray)
+                List {
+                    ForEach(moods) { mood in
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text("Mood: \(mood.selectedEmoji ?? "Unknown")")
+                                .font(.headline)
+
+                            if let note = mood.note, !note.isEmpty {
+                                Text("Note: \(note)")
+                                    .font(.subheadline)
+                                    .foregroundColor(.secondary)
+                            }
+
+                            if let timestamp = mood.timestamp {
+                                Text("Date: \(timestamp.formatted(date: .abbreviated, time: .shortened))")
+                                    .font(.caption)
+                                    .foregroundColor(.gray)
+                            }
                         }
+                        .padding(.vertical, 8)
                     }
-                    .padding(.vertical, 8)
+                    .onDelete(perform: deleteMoods)
                 }
-                .onDelete(perform: deleteMoods)
+                .toolbar {
+                    EditButton()
+                }
             }
-            .navigationTitle("Mood History")
-            .toolbar {
-                EditButton()
-            }
+            .padding()
+            .background(
+                Color(red: 0.82, green: 0.96, blue: 0.93) // Set custom background color
+            )
+            .cornerRadius(12) // Optional: adds rounded corners
         }
+        .background(
+            Color(red: 0.82, green: 0.96, blue: 0.93) // Background for the whole screen
+                .edgesIgnoringSafeArea(.all) // Ensures the background covers the entire screen
+        )
+        .navigationViewStyle(StackNavigationViewStyle()) // Optional: ensures proper styling on iPad and Mac
     }
 
     private func deleteMoods(offsets: IndexSet) {

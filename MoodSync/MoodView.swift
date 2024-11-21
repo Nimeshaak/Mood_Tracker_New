@@ -8,11 +8,11 @@ struct MoodView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     let moods = [
-        ("Awful", "😡"),
-        ("Sad", "😢"),
-        ("Surprised", "😱"),
-        ("Happy", "😊"),
-        ("Sleepy", "😴")
+        ("Great", "😄"),
+        ("Okay", "🙂"),
+        ("Meh", "😐"),
+        ("Bad", "☹️"),
+        ("Terrible", "😞")
     ]
 
     init() {
