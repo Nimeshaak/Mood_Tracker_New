@@ -1,19 +1,26 @@
 import SwiftUI
+import UserNotifications
 
 struct NotificationView: View {
-    @EnvironmentObject var notificationVM: NotificationViewModel
-    
-    var body: some View {
-        VStack {
-            Text("Your Notifications")
-                .font(.headline)
-                .padding()
+    @State private var notifications: [String] = []
 
-            List(notificationVM.notifications, id: \.self) { notification in
+    var body: some View {
+        NavigationView {
+            List(notifications, id: \.self) { notification in
                 Text(notification)
-                    .padding()
+            }
+            .navigationTitle("Notifications")
+            .onAppear {
+                fetchNotifications()
             }
         }
-        .navigationTitle("Notifications")
+    }
+
+    private func fetchNotifications() {
+        // Retrieve saved notifications from UserDefaults
+        if let savedNotifications = UserDefaults.standard.stringArray(forKey: "notifications") {
+            self.notifications = savedNotifications.isEmpty ? ["No notifications yet."] : savedNotifications
+            print("Fetched notifications: \(self.notifications)") // Debugging log
+        }
     }
 }

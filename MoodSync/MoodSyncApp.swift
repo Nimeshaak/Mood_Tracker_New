@@ -3,27 +3,24 @@ import UserNotifications
 
 @main
 struct MoodSyncApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
     let persistenceController = PersistenceController.shared
-    @StateObject private var notificationVM = NotificationViewModel()
 
     init() {
-        // Request notification permission
         requestNotificationPermission()
-        // Schedule the hourly notifications
-        scheduleHourlyNotifications()
+        scheduleHourlyNotification()
     }
 
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                ContentView()
+                ContentView()  // Replace this with your HomeView
                     .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                    .environmentObject(notificationVM)
             }
         }
     }
 
-    // Request permission to send notifications
     private func requestNotificationPermission() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
             if granted {
@@ -34,42 +31,44 @@ struct MoodSyncApp: App {
         }
     }
 
-    // Schedule the hourly notifications
-    private func scheduleHourlyNotifications() {
-        // Define the notification content
-        let reminderMessages = [
-            "Did you add your mood today?",
-            "Come check out these stress-releasing tricks!",
-            "It's time for your mood update!"
-        ]
-        
-        // Create a notification request for each hourly notification
+    private func scheduleHourlyNotification() {
         let content = UNMutableNotificationContent()
-        
-        // Randomly select one message every hour
-        let randomMessage = reminderMessages.randomElement() ?? "Reminder: Update your mood!"
-        
-        content.body = randomMessage
         content.title = "MoodSync Reminder"
+        content.body = "Don't forget to update your mood!"
         content.sound = .default
         
-        // Create a time trigger that repeats every hour
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
-        
-        // Create a notification request
-        let request = UNNotificationRequest(identifier: "HourlyReminder", content: content, trigger: trigger)
-        
-        // Add the request to the notification center
+
+        let request = UNNotificationRequest(
+            identifier: "singleReminder",
+            content: content,
+            trigger: trigger
+        )
+
         UNUserNotificationCenter.current().add(request) { error in
             if let error = error {
                 print("Error scheduling notification: \(error.localizedDescription)")
             } else {
-                // When notification is scheduled, add to view model
-                DispatchQueue.main.async {
-                    self.notificationVM.addNotification(message: randomMessage)
-                }
-                print("Notification scheduled.")
+                print("Notification scheduled with message: \(content.body)")
+                saveNotification(content.body)
             }
         }
+    }
+
+    private func saveNotification(_ message: String) {
+        var savedNotifications = UserDefaults.standard.stringArray(forKey: "notifications") ?? []
+        savedNotifications.append(message)
+        UserDefaults.standard.set(savedNotifications, forKey: "notifications")
+    }
+}
+
+class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+    func application(_ application: UIApplication, didReceive notification: UNNotification) {
+        print("Received notification while app is in the foreground: \(notification.request.content.body)")
+    }
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        UNUserNotificationCenter.current().delegate = self
+        return true
     }
 }

@@ -1,9 +1,9 @@
 import SwiftUI
 
 class NotificationViewModel: ObservableObject {
-    @Published var notifications: [String] = []
+    @Published var notifications: [String] = [] // Store notification messages
 
-    // Function to add new notifications
+    // Add a notification to the list
     func addNotification(message: String) {
         notifications.append(message)
     }

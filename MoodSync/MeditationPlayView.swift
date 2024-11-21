@@ -2,6 +2,7 @@ import SwiftUI
 import AVFoundation
 
 struct MeditationPlayView: View {
+    @Environment(\.presentationMode) var presentationMode // For dismissing the screen
     @State private var timerValue: Int = 60 // Timer duration in seconds
     @State private var timeRemaining: Int = 60
     @State private var isTimerRunning = false
@@ -9,34 +10,85 @@ struct MeditationPlayView: View {
     @State private var audioPlayer: AVAudioPlayer?
     @State private var breathingInstruction: String = "Breathe In" // Default first instruction
     @State private var breathCycle: Int = 0 // Keeps track of the breath cycle
+    @State private var isFading = false // Controls fading animation
+    private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
     var body: some View {
-        VStack {
-            Spacer()
+        ZStack {
+            // Background image
+            Image("IMG2") // Replace with your image asset name
+                .resizable()
+                .scaledToFill()
+                .edgesIgnoringSafeArea(.all)
 
-            // Title
-            Text("Relax and Breathe")
-                .font(.largeTitle)
-                .fontWeight(.bold)
-                .padding(.bottom, 20)
+            // Overlay content
+            VStack {
+                // Title and description
+                VStack(alignment: .center, spacing: 8) {
+                    Text("Relax and Breathe")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
 
-            // Timer Display
-            Text("\(timeFormatted(timeRemaining))")
-                .font(.system(size: 50, weight: .bold))
-                .foregroundColor(.blue)
-                .padding(.bottom, 40)
+                    Text("A guided breathing exercise to help you relax.")
+                        .font(.body)
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.white)
+                }
+                .padding(.top, 20)
 
-            // Breathing Instruction
-            Text(breathingInstruction)
-                .font(.title)
-                .foregroundColor(.green)
-                .padding(.bottom, 20)
+                Spacer()
 
-            Spacer()
-        }
-        .padding()
-        .onAppear {
-            startMeditation() // Start meditation as soon as the view appears
+                // Breathing Instructions with fading effect
+                VStack {
+                    Text(breathingInstruction)
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .opacity(isFading ? 0 : 1)
+                        .animation(.easeInOut(duration: 1).repeatForever(autoreverses: true), value: isFading)
+                        .onAppear {
+                            isFading.toggle()
+                        }
+                }
+
+                Spacer()
+
+                // Countdown timer
+                Text(formatTime(timeRemaining))
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                    .padding(.bottom, 40)
+                    .onReceive(timer) { _ in
+                        if timeRemaining > 0 {
+                            timeRemaining -= 1
+                            updateBreathingCycle()
+                        } else {
+                            stopMusic()
+                            showCompletionMessage = true
+                        }
+                    }
+            }
+            .padding()
+
+            // Close button
+            VStack {
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Image(systemName: "xmark")
+                            .foregroundColor(.black)
+                            .padding()
+                            .background(Color.white.opacity(0.7))
+                            .clipShape(Circle())
+                    }
+                    .padding()
+                }
+                Spacer()
+            }
         }
         .alert(isPresented: $showCompletionMessage) {
             Alert(
@@ -45,10 +97,13 @@ struct MeditationPlayView: View {
                 dismissButton: .default(Text("OK"))
             )
         }
+        .onAppear {
+            startMeditation() // Start meditation as soon as the view appears
+        }
     }
 
     // Format Time
-    private func timeFormatted(_ totalSeconds: Int) -> String {
+    private func formatTime(_ totalSeconds: Int) -> String {
         let minutes = totalSeconds / 60
         let seconds = totalSeconds % 60
         return String(format: "%02d:%02d", minutes, seconds)
@@ -57,23 +112,8 @@ struct MeditationPlayView: View {
     // Start Meditation
     private func startMeditation() {
         isTimerRunning = true
+        setupAudioPlayer()
         playMusic()
-        startTimer()
-    }
-
-    // Start Timer
-    private func startTimer() {
-        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-            if timeRemaining > 0 {
-                timeRemaining -= 1
-                updateBreathingCycle()
-            } else {
-                timer.invalidate()
-                isTimerRunning = false
-                stopMusic()
-                showCompletionMessage = true
-            }
-        }
     }
 
     // Update Breathing Instructions
